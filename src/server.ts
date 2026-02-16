@@ -1,12 +1,13 @@
 import app from "./app";
+import { envVars } from "./config/env";
 
 
 // const port = process.env.PORT
 const port = 5000
 const bootstrap = () => {
     try {
-        app.listen(port, () => {
-            console.log(`Server is running on http://localhost:${port}`);
+        app.listen(envVars.PORT, () => {
+            console.log(`Server is running on http://localhost:${envVars.PORT}`);
         });
     } catch (error) {
         console.error('Failed to lode server', error)

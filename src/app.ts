@@ -1,6 +1,7 @@
-import express, { Application, Request, Response } from "express";
-import { prisma } from "./app/lib/prisma";
+import express, { Application, NextFunction, Request, Response } from "express";
 import { IndexRoute } from "./app/routes";
+import { globalErrorHandler } from "./app/middleware/globalErrorHandler";
+import { notFound } from "./app/middleware/notFound";
 
 
 const app: Application = express();
@@ -14,6 +15,7 @@ app.use(express.json());
 app.use("/api/v1", IndexRoute)
 
 // Basic route
-
+app.use(globalErrorHandler)
+app.use(notFound)
 
 export default app;
