@@ -6,7 +6,7 @@ import { auth } from "../../lib/auth";
 import { catchAsync } from "../../shared/catchAsync";
 import { sendResponse } from "../../shared/sendResponse";
 import { tokenUtils } from "../../utils/token";
-import { envVars } from "../../../config/env";
+import { envVars } from "../../config/env";
 import { CookieUtils } from "../../utils/cooke";
 import { AuthService } from "./auth.services";
 

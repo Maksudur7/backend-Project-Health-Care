@@ -4,7 +4,7 @@ import status from "http-status";
 import nodemailer from "nodemailer";
 import path from "path";
 import AppError from "../errorHelpers/AppError";
-import { envVars } from "../../config/env";
+import { envVars } from "../config/env";
 
 const transporter = nodemailer.createTransport({
     host: envVars.EMAIL_SENDER.SMTP_HOST,
